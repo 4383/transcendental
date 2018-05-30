@@ -32,23 +32,11 @@ def main():
     classifier.load_weights("{}/model.h5".format(config.MODELS))
     print("Loaded model from disk")
 
-    train_datagen = ImageDataGenerator(
-        rescale=1./255,
-        shear_range=0.2,
-        zoom_range=0.2,
-        horizontal_flip=True)
-    training_set = train_datagen.flow_from_directory(
-        'CNN_Data/training_set',
-        target_size=(64, 64),
-        batch_size=32,
-        class_mode='binary')
-
     # Predict with the model
     test_image = image.load_img(args.image, target_size = (64, 64))
     test_image = image.img_to_array(test_image)
     test_image = np.expand_dims(test_image, axis = 0)
     result = classifier.predict(test_image)
-    training_set.class_indices
     prediction = "unknown"
     if result[0][0] == 1:
         prediction = 'dog'
