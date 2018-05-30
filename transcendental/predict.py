@@ -5,6 +5,7 @@ from keras.models import Sequential
 from keras.preprocessing import image
 from keras.preprocessing.image import ImageDataGenerator
 import numpy as np
+import config
 
 
 def is_valid_file(parser, arg):
@@ -23,12 +24,12 @@ def argparser():
 def main():
     args = argparser()
     # load YAML and create model
-    yaml_file = open('/etc/transcendental/models/model.yaml', 'r')
+    yaml_file = open('{}/model.yaml'.format(config.MODELS), 'r')
     loaded_model_yaml = yaml_file.read()
     yaml_file.close()
     classifier = model_from_yaml(loaded_model_yaml)
     # load weights into new model
-    classifier.load_weights("models/model.h5")
+    classifier.load_weights("{}/model.h5".format(config.MODELS))
     print("Loaded model from disk")
 
     train_datagen = ImageDataGenerator(
