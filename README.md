@@ -1,4 +1,4 @@
-# Transcendental
+# Transcendental (π)
 
 Artificial Intelligence image recognition.
 

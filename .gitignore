@@ -9,3 +9,5 @@ dist/
 *.swp
 *~
 docs/_build/
+AUTHORS
+ChangeLog
