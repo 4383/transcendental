@@ -1,9 +1,7 @@
 import argparse
 import os.path
 from keras.models import model_from_yaml
-from keras.models import Sequential
 from keras.preprocessing import image
-from keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 import config
 
@@ -17,7 +15,7 @@ def is_valid_file(parser, arg):
 def argparser():
     parser = argparse.ArgumentParser(description='Recognize cat and dogs')
     parser.add_argument('image', help='an image to analyze',
-        type=lambda x: is_valid_file(parser, x))
+                        type=lambda x: is_valid_file(parser, x))
     return parser.parse_args()
 
 
@@ -33,9 +31,9 @@ def main():
     print("Loaded model from disk")
 
     # Predict with the model
-    test_image = image.load_img(args.image, target_size = (64, 64))
+    test_image = image.load_img(args.image, target_size=(64, 64))
     test_image = image.img_to_array(test_image)
-    test_image = np.expand_dims(test_image, axis = 0)
+    test_image = np.expand_dims(test_image, axis=0)
     result = classifier.predict(test_image)
     prediction = "unknown"
     if result[0][0] == 1:
