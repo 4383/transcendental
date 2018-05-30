@@ -23,7 +23,7 @@ def argparser():
 def main():
     args = argparser()
     # load YAML and create model
-    yaml_file = open('models/model.yaml', 'r')
+    yaml_file = open('/etc/transcendental/models/model.yaml', 'r')
     loaded_model_yaml = yaml_file.read()
     yaml_file.close()
     classifier = model_from_yaml(loaded_model_yaml)
