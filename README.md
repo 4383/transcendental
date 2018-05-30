@@ -50,6 +50,14 @@ This command generate models automaticaly used by predict at launch
 
 Currently in development!
 
+### Requires
+
+- python 2.7+
+- keras
+- tensorflow
+- Pillow
+- h5py
+
 ## Resources
 - https://becominghuman.ai/building-an-image-classifier-using-deep-learning-in-python-totally-from-a-beginners-perspective-be8dbaf22dd8
 - https://drive.google.com/drive/folders/1XaFM8BJFligrqeQdE-_5Id0V_SubJAZe
