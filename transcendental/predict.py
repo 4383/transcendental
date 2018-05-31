@@ -3,7 +3,7 @@ import os.path
 from keras.models import model_from_yaml
 from keras.preprocessing import image
 import numpy as np
-import config
+import transcendental.config
 
 
 def is_valid_file(parser, arg):
